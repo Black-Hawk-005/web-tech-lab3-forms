@@ -1,0 +1,176 @@
+<!-- This index.html file contains the main html structure of the forms -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Registration Form</title>
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(23, 23, 23);
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            font-size: larger;
+        }
+
+        .qn-label, .form-qn  {
+            font-size: 22px;
+            background-color: rgb(60, 0, 224);
+        }
+
+
+        .form-element {
+            background-color: rgb(49, 49, 49);
+            width: 1000px;
+            margin-top: 125px;
+            margin-bottom: 125px;
+            padding: 50px 90px;
+        }
+
+        .form-heading {
+            outline: 8px;
+            outline-color: green;
+            margin-bottom: 40px;
+        }
+
+        #form-row-2 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .input-box {
+            margin-top: 8px;
+            margin-bottom: 8px;
+            height: 25px;
+            width: 100%;
+            outline: none;
+            font-size: large;
+            font-family: 'Courier New', Courier, monospace;
+            padding-left: 10px;
+        }
+
+        #phone-input, #email-input {
+            width: 481px;
+            margin-right: 20px;
+        }
+        
+        .error-text {
+            color: rgb(254, 0, 0);
+        }
+
+        .form-qn {
+            display: inline-block;
+        }
+
+        #form-row-3 {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #form-row-3a {
+            margin-right: 370px;
+        }
+
+        .input-choice {
+            accent-color: rgb(60, 0, 224);
+        }
+
+        #tnc-anchor {
+            color: white;
+            background-color: rgb(60, 0, 224);
+        }
+
+        #submit-button {
+            border: solid 0.5px rgba(255, 255, 255, 0.4);
+            background-color: rgb(60, 0, 224);
+            color: white;
+            font-family: 'Courier New', Courier, monospace;
+            height: 30px;
+            width: fit-content;
+            font-size: large;
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="form-element">
+
+        <h1 class="form-heading" id="form-heading">Code Rush Registration</h1>
+        
+        <form name="form-1">
+            <div id="form-row-1">
+                <label class="qn-label"  for="name-input">Name</label><br>
+                <input class="input-box" id="name-input" type="text">
+            </div>
+            <p class="error-text" id="error-row-1"></p>
+            <br>
+            <div id="form-row-2">
+                <div class="form-block">
+                    <label class="qn-label"  for="phone-input">Phone</label><br>
+                    <input class="input-box" id="phone-input" type='tel'> 
+                </div>
+
+                <div class="form-block">
+                    <label class="qn-label"  for="email-input">College email ID</label><br>
+                    <input class="input-box" id="email-input" type="text" >
+                </div>
+            </div>
+            <p class="error-text" id="error-row-2"></p>
+        </form>
+
+        <div id="form-row-3">
+            <div class="form-block" id="form-row-3a">
+                <p class="form-qn">Year of Study</p>
+                <form class="in-line-form" name="form-2a">
+                    <input class="input-selection" id="year-1" name="year" type="radio">
+                    <label for="year-1">I</label><br>
+                    <input class="input-selection" id="year-2" name="year" type="radio">
+                    <label for="year-2">II</label><br>
+                    <input class="input-selection" id="year-3" name="year" type="radio">
+                    <label for="year-3">III</label><br>
+                    <input class="input-selection" id="year-4" name="year" type="radio">
+                    <label for="year-4">IV</label><br>
+                
+                </form>
+            </div>
+
+            <div class="form-block" id="form-row-3b">
+                <p class="form-qn">Branch</p>
+                <form class="in-line-form" name="form-2b">
+                    <input class="input-selection" id="ai-ds" name="branch" type="radio">
+                    <label class="input-choice" for="ai-ds">AI & Data Science</label><br>
+                    <input class="input-selection" id="cyber" name="branch" type="radio">
+                    <label class="input-choice" for="cyber">Cyber Security</label><br>
+                    <input class="input-selection" id="iot" name="branch" type="radio">
+                    <label class="input-choice" for="iot">Internet of Things</label><br>
+                </form>
+            </div>
+
+        </div>
+        <p class="error-text" id="error-row-3"></p>
+        <br>
+
+        <form name="form-3">
+            <input class='checkbox' id="terms-and-conditions" type="checkbox">
+            <label for="terms-and-conditions">I agree to <a id='tnc-anchor' target="_blank" href="https://ssnsnucinvente.com/department/cse" >terms and conditions.</a></label>
+        </form>
+        <p class="error-text" id="error-row-4"></p>
+
+        <br>
+
+        <input class="button" id="submit-button" type="submit" onclick="validateForm()">
+        <p class="green-text" id="success-text"></p>
+        
+    </div>
+    
+
+    <script src="script.js"></script>
+</body>
+</html>
